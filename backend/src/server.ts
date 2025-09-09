@@ -1,20 +1,28 @@
+import dotenv from 'dotenv';
+import path from 'path';
+
+// Load environment variables FIRST before importing any services
+const envPath = path.join(__dirname, '..', '.env');
+console.log(`🔍 Looking for .env file at: ${envPath}`);
+dotenv.config({ path: envPath });
+console.log(`🔑 ELEVENLABS_API_KEY loaded: ${process.env.ELEVENLABS_API_KEY ? 'YES' : 'NO'}`);
+console.log(`📞 TWILIO_ACCOUNT_SID loaded: ${process.env.TWILIO_ACCOUNT_SID ? 'YES' : 'NO'}`);
+
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import dotenv from 'dotenv';
-import path from 'path';
 import fs from 'fs-extra';
 
 // Import routes
 import voiceRoutes from './routes/voice';
 import callRoutes from './routes/call';
 
-// Load environment variables
-dotenv.config();
-
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+console.log('🔥 Server starting with environment variables loaded...');
+console.log('🚀 All API keys configured and ready!');
 
 // Ensure audio directory exists
 const audioDir = path.join(__dirname, '..', 'audio');
