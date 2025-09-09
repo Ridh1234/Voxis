@@ -140,6 +140,12 @@ EXOTEL_API_KEY=your_exotel_api_key_here
 EXOTEL_API_TOKEN=your_exotel_api_token_here
 EXOTEL_SID=your_exotel_sid_here
 EXOTEL_VIRTUAL_NUMBER=your_virtual_number_here
+Or Use Twilio [The backend is configured to work from any of the sites]
+# Twilio Configuration
+TWILIO_ACCOUNT_SID=
+TWILIO_AUTH_TOKEN=
+TWILIO_PHONE_NUMBER=
+TWILIO_WEBHOOK_URL=
 ```
 
 **Note**: If you don't have API keys, the application will work in simulation mode with mock data.
@@ -377,3 +383,4 @@ The project successfully meets all assignment requirements while providing addit
 **Contact**: For questions or support regarding this implementation, please refer to the assignment submission details.
 
 **Demo**: The application works in full simulation mode without requiring any API keys, making it perfect for demonstration and testing purposes.
+
